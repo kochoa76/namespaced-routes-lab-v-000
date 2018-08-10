@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
   def index
-    if Preference.exists?
+    if @preference && @preference.artist_sort_order
+      @artist = Artist.order(name: @preferences.artist_sort_order)
     @artists = Artist.all
   end
 
