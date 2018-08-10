@@ -28,8 +28,8 @@ class SongsController < ApplicationController
 
   def new
     if !Preference.exists?(:allow_create_songs)
-      redirect_to songs_path 
-    else 
+      redirect_to songs_path
+    else
       @song = Song.new
   end
 
