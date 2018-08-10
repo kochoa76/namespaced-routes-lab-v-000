@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   def index
+    if Preference.exists?
     @artists = Artist.all
   end
 
@@ -53,4 +54,8 @@ class ArtistsController < ApplicationController
   def artist_params
     params.require(:artist).permit(:name)
   end
+
+  def set_preferences 
+    @preference = Preference.first 
+  end 
 end
