@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   def index
     if @preference && @preference.artist_sort_order
       @artists = Artist.order(name: @preferences.artist_sort_order)
-    else 
+    else
       @artists = Artist.all
   end
 
@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
       redirect_to artists_path
     else
       @artist = Artist.new
-    end 
+    end
   end
 
   def create
@@ -57,7 +57,7 @@ class ArtistsController < ApplicationController
     params.require(:artist).permit(:name)
   end
 
-  def set_preferences 
-    @preference = Preference.first 
-  end 
+  def set_preferences
+    @preference = Preference.first
+  end
 end
