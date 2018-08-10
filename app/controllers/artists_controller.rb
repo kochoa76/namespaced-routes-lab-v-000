@@ -4,6 +4,7 @@ class ArtistsController < ApplicationController
       @artists = Artist.order(name: @preferences.artist_sort_order)
     else
       @artists = Artist.all
+    end 
   end
 
   def show
